@@ -40,8 +40,11 @@
 	\cfoot{\thepage}
 	
 	% Notes body
-	\section{A Brief Review of Special Relativity}
-	\subsection{Introduction}
+	\section{Introduction}
+	\subsection{A Brief Review of Special Relativity}
+	
+		\textbf{Disclaimer:} This chapter should \textbf{not} be used to define the formalities that will be dealt with later. Rather, this chapter is meant to serve as a bridge coming from Special Relativity to have the conceptual framework to work with General Relativity. If you already feel comfortable with Special Relativity, \hyperref[ch:2]{skip to chapter 2}. Otherwise, I suggest reading this chapter before you begin.
+	
  		General Relativity is the modern theory of classical gravity. What do we mean by "classical"? Simply, it is a nomenclature to distinguish from Quantum Mechanics, so those effects are ignored. The basic idea from Newtonian Mechanics is that gravity is a force, and as we know, most forces are described by fields.
  		
  		The simplest example of a field that describes a force is the Newtonian gravitational potential $\Phi (\vec{r})$:
@@ -68,10 +71,10 @@
  				where $\rho$ is the mass density. We solve this Laplace's equation to determine the field. If $\rho$ is a $\Del(\vec{r})$ function such that it describes a point mass, which implies that
  				$\Phi \propto \nicefrac{1}{\vec{r}}$.
  			\end{exmp}
+ 		\pagebreak
 	 		\begin{exmp}
 	 			Electromagnetic field equations. See the \hyperref[eq:Maxwell]{Maxwell's Equation's} above. In equation (1.2), we have that $\rho$ represents the charge density to determine the field in terms of the forces from some collection of charge sources.
 	 		\end{exmp}
- 		\pagebreak
  			\item \textbf{Force law}
  			\subitem The force law is an equation that determines how an object moves in the presence of a field. So we start by describing a collection of sources and how they describe some force field, and then we use the force law to determine how bodies in motion are affected by the force field using the force law.
  			\begin{exmp}
@@ -130,7 +133,6 @@
  		\end{figure}
  		So in other words, it is the curve that finds the extrema of the distance between two points over some space. The force law is therefore just the statement that bodies will move in geodesics over some geometry, even when said geometry is curved. So when we think of gravity as the curvature of spacetime, then geodesics will describe motion over spacetime as it is curved.
  		
- 		\subsection{Special Relativity}
  		The discussion of special relativity will serve to introduce spacetime properly. We will develop it further later on, but for now we will proceed with a heuristic manner. 
  		
  		\begin{defn}
@@ -489,7 +491,8 @@
  			\end{align*}
  		\end{exe}
  	\pagebreak
- 	\section{Manifolds}
+ 	\section{Pseudo-Riemannian Geometry} \label{ch:2}
+ 	\subsection{Manifolds}
  		We recall the equivalence principle which states that spacetime locally looks like Minkowski space $\R^{3,1}$. In small frames of reference we can presume that gravity can be ignored and thus assume a pure Minkowski space with accelerating frames of reference. In larger frames of reference, gravity does not act as a fictitious force, but the knowledge that it indeed is equivalent to a fictitious force is important nonetheless. To understand this. take the coordinate system we usually employ on the Earth itself of latitude and longitude. When we consider a local area as seen by a human being, these coordinates can be presumed to be in a flat space. However, when considering the same coordinates over larger distances as when travelling in a Trans-Atlantic flight, the metric describing the coordinates curves with the Earth itself.
  		
  		\begin{thm}
@@ -1352,7 +1355,7 @@
  			\begin{exe}
  				Consider the manifold $\R^2$ such that $ds^2 = dx^2 + dy^2 = dr^2 + r^2 d\theta^2$. Compute $\Gamma_{\nu\rho}^\mu$ in both coordinates.
  			\end{exe}
- 		\subsection{Calculus}
+ 		\subsection{Calculus of Tensors}
  			We know that spacetime is a manifold with a (0,2) metric tensor $g_{\mu\nu}$, from which we can yield intervals over coordinates using geodesics to extremize the distance between two points in spacetime. The geodesic equation of some worldline defined by the functions $x^\mu (\lambda)$ is given by equation (\ref{eq:CleanGeodesic}), where $\lambda$ is the parametrization variable of the worldline. So the geodesic is a differential equation where $\Gamma_{\nu\rho}^\mu$, as defined in equation (\ref{eq:ChristoffelSymbol}), captures the deviation from $\ddot{x}^\mu = 0$ (ie. a straight line) in terms of both fictitious forces and the curvature of spacetime. Also recall that $\Gamma_{\nu\rho}^\mu$ is not a tensor as it transforms as seen in equation (\ref{eq:ChristoffelTransformation}).
  			
  			The principle of general covariance implies that the laws of physics must be represented through tensors. We also saw that these laws involve derivatives, so we need to learn how to take derivatives of tensors in a way that the derivation yields another tensor. 
@@ -1530,8 +1533,7 @@
  				$$ \Gamma_{\theta\theta}^r = -r \quad\quad \text{AND} \quad\quad \Gamma_{r\theta}^\theta = r^{-1}$$
  				Now consider a radial vector of unit length such that $v^r = 1$ and $v^\theta = 0$. Compute $\Del_\mu v^\mu$ in both coordinate systems and verify that the answers are equal, as the divergence of the vectors will be a (0,0)-tensor.
  			\end{exe}
- 	\pagebreak
- 	\section{Curvature}
+ 	\subsection{Curvature}
  		Spacetime is a manifold with a metric $g_{\mu\nu}$ from which we define a covariant derivative (\ref{eq:TensorCovDerivative}) and the Christoffel symbol (\ref{eq:ChristoffelSymbol}).
  		
  		What do we mean when we say that a manifold is curved? That is, when a certain geometry happens to be curved rather than flat. There are many ways to characterize the notion of curvature. We will present a very common way to define curvature.
@@ -1642,7 +1644,6 @@
  				\end{minipage}
  			\end{figure}
  		\end{exmp}
- 		\subsection{Riemann Tensor}
  		So how does a vector change as we parallel transport it around some small cycle in spacetime? Let us start by defining a parallelogram. We define each edge of the parallelogram as a directional vector from one vertex to another.
  		\begin{figure}[h]
  			\begin{tikzpicture}
@@ -1777,8 +1778,6 @@
  			$$ ds^2 = dx^2 + dy^2 = dr^2 + r^2 d\theta^2$$
  			Here, we have $\Gamma_{\theta\theta}^r = -r$ and $\Gamma_{r\theta}^\theta = \frac{1}{r}$. Compute the Riemann tensor in both coordinate systems.
  		\end{exe}
- 		
- 		\pagebreak
  		We now recall that from a metric $g_{\mu\nu}$ we obtain the \hyperref[eq:ChristoffelSymbol]{Christoffel Symbol}, which is not a tensor and it captures the deviation of a particle from being in a straight line. It achieves this capture using the effect of fictitious forces in an accelerating coordinate system as well as the effect of some curvature in the geometry of the metric. In order to get this notion of curvature, we observed how vectors transform over cycles in spacetime using the \hyperref[eq:RiemannTensor]{Riemann Tensor}, which is defined by a linear combination of the first derivatives of the Christoffel symbol and the squares of the Christoffel symbol. In other words, the Riemann tensor captures the extent to which spacetime is not flat. So it is impossible to find a coordinate system where the metric is constant.
  		
  		The \hyperref[defn:StrongEquivalence]{Equivalence Principle} states that for any point $x_0^\mu$ in spacetime given coordinates $x^\mu$, we can find a new coordinate system $x^{\mu'}$ which has the property that at this point $x_0^\mu = x^{\mu'} = 0$ we have:
@@ -1799,7 +1798,7 @@
  			\frac{\partial x^\mu}{\partial x^{\mu'}} &= \left. \frac{\partial x^\mu}{\partial x^{\mu'}} \right|_{x^{\mu'} = 0} + \left. \frac{\partial^2 x^\mu}{\partial x^{\mu'} \partial x^{\nu'} } \right|_{x^{\mu'} = 0} x^{\mu'} + \left. \frac{\partial^3 x^{\mu}}{\partial x^{\mu'} \partial x^{\nu'} \partial x^{\sigma'} }\right|_{x^{\mu'} = 0} \left( x^{\mu'} \right)^2 + \cdots 
  		\end{align*}
  		On the expansion, the first term has $4\times 4 = 16$ degrees of freedom as it is the Jacobian as usual, the second term has $4 \times 10 = 40$ degrees of freedom as we have 4 choices for the coordinates and 10 degrees of freedom in a symmetric (2,0)-tensor, and the third term has $4 \times 20 = 80$ degrees of freedom given the 4 choices of coordinates and the 20 degrees of freedom in a symmetric (3,0)-tensor. We remember that we are attempting to compare these degrees of freedom to the number of degrees of freedom in $g_{\mu'\nu'}$ expanded around $x^{\mu'} = 0$.
- 		$$ g_{\mu'\nu'} = \left. g_{\mu'\nu'} \right|_{x^{\mu'} = 0} + \left. \partial_\mu g_{\mu'\nu'} x^\mu \right|_{x^{\mu'} = 0}+ \left. \partial_\mu \partial_\nu g_{\mu'\nu'} \right|_{x^{\mu'} = 0} \left( x^{\mu'}\right)^2 + \cdots$$
+ 		$$ g_{\mu'\nu'} = \left. g_{\mu'\nu'} \right|_{x^{\mu'} = 0} + \left. \partial_{\mu'} g_{\mu'\nu'} x^{\mu'} \right|_{x^{\mu'} = 0}+ \left. \partial_{\mu'} \partial_{\nu'} g_{\mu'\nu'} \right|_{x^{\mu'} = 0} \left( x^{\mu'}\right)^2 + \cdots$$
  		On this expansion we know the metric will have 10 degrees of freedom. The derivative of the metric will be over 4 coordinates, so it will be $4 \times 10 = 40$ degrees of freedom on the second term. The third term will be the number of degrees of freedom in the metric squared, so it will have $10^2 = 100$ degrees of freedom. 
  		
  		Let us do this explicitly by expanding at $\mathcal{O}\Big(\big(x^{\mu'} \big)^0\Big)$. As we saw for equation (\ref{eq:FlatMetric2}), the 16 degrees of freedom in the Jacobian allow us to have the metric equal to a Minkowski metric. For $\mathcal{O}\Big(\big(x^{\mu'} \big)^1\Big)$ we have the same number of degrees of freedom which allows us to say $\partial g_{\mu'\nu'} = 0$. At order $\mathcal{O}\Big(\big(x^{\mu'} \big)^2\Big)$ we have a 20 degree of freedom difference, so we have 20 degrees of freedom in the second derivative of the metric that cannot be removed by some choice of coordinates.
@@ -1807,6 +1806,7 @@
  		To summarize this, we can always choose coordinates where the metric is the flat metric and the first derivative of the metric vanishes at any given point, which in the above example we chose to be the origin $x^{\mu'}=0$
  		$$ g_{\mu' \nu'} = \eta_{\nu'\mu'} \quad\quad \text{AND} \quad \quad \partial_{\rho'} g_{\mu' \nu} = 0$$
  		\begin{defn}
+ 			\label{defn:RNC}
  			The coordinates $x^{\mu'}$ that allow for a flat metric $g_{\mu' \nu'} = \eta_{\nu'\mu'}$ and a zero first derivative at any point $\partial_{\rho'} g_{\mu' \nu} = 0$ are denoted \textbf{Riemann Normal Coordinates} or \textbf{Locally Inertial Coordinates} or \textbf{Freely Falling Coordinates}.
  		\end{defn}
  		Recalling Einstein's elevator accelerating downwards at $9.8$ m s$^{-2}$, one would experience a net zero force and would not move on the reference frame of the elevator, considering the elevator is falling towards the Earth. This technique is how airplanes emulate zero-gravity. Thus, we can also extrapolate this to General Relativity where $\Gamma_{\mu'\nu'}^{\rho'} = 0$ for some given point. So now it is natural to wonder what the Riemann tensor would be in Riemann Normal Coordinates. We first lower the Riemann tensor index and define it at the point $x^{\mu'} = 0$.
@@ -1826,7 +1826,6 @@
  		And the anti-symmetry:
  		$$ R_{\left[ \rho' \sigma' \mu'\nu' \right]} = R_{\rho' \left[\sigma'\mu'\nu'\right]}=0$$
  		
- 	\pagebreak
  		So we made a clever choice of coordinates which allowed us to evaluate the Riemann tensor at the point $x^{\mu'} = 0$. So given these symmetry conditions, we find the degrees of freedom in the Riemann tensor. Equations (\ref{eq:RiemannSymmetry}) and (\ref{eq:RiemannSymmetry2}) imply that the first and second pairs of indices in the Riemann tensor each act like a $4 \times 4$ anti-symmetric matrix, meaning we have $\frac{4\times3}{2} = 6$ degrees of freedom. Recall that for $D$-dimensions, a square matrix has $D^2$ degrees of freedom, a symmetric matrix has $\frac{(D+1)D}{2}$ degrees of freedom, and an anti-symmetric matrix has $\frac{D(D-1)}{2}$ degrees of freedom. Equation (\ref{eq:RiemannSymmetry3}) implies that the Riemann tensor itself behaves like a symmetric $6 \times 6$ matrix, so we have $\frac{6\times7}{2}=21$ degrees of freedom. Finally, equation (\ref{eq:RiemannAntiSymmetry}) removes the number of degrees of freedom in a 4-index anti-symmetric tensor, so it removes 1 degree of freedom. In conclusion, the number of degrees of freedom in a Riemann tensor has $21-1=20$ degrees of freedom.
  		\begin{rem}
  			The Riemann tensor $R^\rho_{\sigma\mu\nu}$ is a packaging of the 20 independent degrees of freedom in the second derivative of the metric $\partial^2 g$ into a tensor.
@@ -1855,4 +1854,182 @@
  			\label{eq:EinsteinTensorBinachi}
  			\boxed{\Del^\mu G_{\mu\nu} = 0}
  		\end{equation}
+ 		
+ 	\begin{exe}
+ 		Consider the wavefunction $\Psi (x) \to e^{i \Lambda} \Psi (x)$ of a particle where we transform the wavefunction by multiplication of some phase $e^{i\Lambda}$. Show that to develop a theory of physics where that phase is allowed to depend where you are in space we would require another degree of freedom, which is the electromagnetic field. The phase transformation in Quantum Mechanics is promoted to a local symmetry which is identified with the Gauge transformation in electromagnetism. (\textit{Hint: Consider the Aharonov-Bohm effect.})
+ 	\end{exe}
+ 	\begin{exe}
+ 		Consider the wavefunctions $\Psi_i (x) \to U_i^j \Psi_i (x)$ of a system of $i$ particles where we transform the wavefunction by multiplication of some Unitary $3 \times 3$ matrix $U^j_i$. Show that to develop a theory of physics where that phase is allowed to be independent of position in spacetime, we would need to introduce $i$ degrees of freedom. For the case where $i=3$, we call these degrees of freedom \textbf{gluons} and the particles \textbf{quarks}, albeit in 2015 \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.115.072001}{CERN} found evidence of quarks in groups of 5, called \textbf{pentaquark particles}, and before that quarks in groups of four were also found in \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.110.252001}{Beijing} and \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.110.252002}{Tsukuba}, denoted \textbf{tetraquark particles}.
+ 	\end{exe}
+ 	
+ 	\pagebreak
+ 	\section{General Theory of Relativity}
+ 	\subsection{Gravitation}
+ 		How can we begin to formulate the laws of physics in the geometry of curved spacetime? More precisely, let us imagine that we know the laws of physics in flat space, ie. Special Relativity. We now need to find how to translate these well-known laws of physics into laws of physics that are valid for curved spacetime. We begin by assuming we know some laws of physics, like the laws of electromagnetism or mechanics. From the \hyperref[defn:StrongEquivalence]{Equivalence Principle} we know that the laws of physics can be studied in a considerably small region such that the laws of physics in this small frame of reference are equivalent to those of Special Relativity, albeit possibly in some inertial coordinate system. So near any particular point $x^\mu_0$ in spacetime, there exists some inertial coordinate system $x^{\hat\mu}$(which we previously defined as \hyperref[defn:RNC]{Riemann Normal Coordinates}) such that the metric is approximately flat.
+ 		$$ g_{\hat\mu\hat\nu} = \eta_{\hat\mu\hat\nu} + \mathcal{O}\left( \partial g \left. x \right|_{x^{\mu}_0}  \right)$$
+ 		Where $\mathcal{O}\left( \partial g \left. x\right|_{x^\mu_0} \right)$ denotes the vanishing first and higher order derivatives of the metric $g_{\mu\nu}$ at the point $x^\mu_0$ such that the only non-vanishing term on the RHS is $\eta_{\hat\mu\hat\nu}$. Also, do not feel confused by the use of $x^{\hat\mu}$ rather than $x^{\mu'}$ as done at the end of chapter 2. Both notations define some inertial coordinate system over the same manifold, so the choice of which one to use for the examples is completely arbitrary, but must remain consistent once it is used to define an inertial coordinate system.
+ 		
+ 		Let us consider a set of laws of physics in Special Relativity such that we define them over some locally Minkowski spacetime manifold $\R^{3,1}$ around some particular point $x^\mu_0$, but which curves in the neighbourhood around $x^{\mu}_0$. Then, we must proceed to define every law of physics in tensorial form, such that every equation of motion is written with tensors but in an inertial coordinate system $x^{\hat\mu}$ adapted at the point $x^\mu_0$. If everything is done correctly and follows the mathematics established in chapter 2, then we find that the tensor equation we get for every law of physics represents said law of physics in curved spacetime. This effectively yields a transition from laws of physics in flat spacetime to the same laws of physics in curved spacetime. 
+ 		
+ 		\begin{defn}
+ 			The \textbf{Principle of Minimal Coupling} allows any set of laws of physics well-defined on flat spacetime to be covariantly transformed into tensor equations via the transformation
+ 			\vspace{1.5cm}
+ 			\begin{equation}
+ 				\label{eq:PrincipleOfMinimalCoupling}
+ 				\boxed{ \text{PMC} \equiv \begin{cases}
+ 						\eta_{\mu\nu} \to g_{\mu\nu} \\
+ 						\frac{\partial}{\partial x^\mu} \to \Del_\mu
+ 				\end{cases}}
+ 			\end{equation}
+ 		\end{defn}
+ 	
+ 		\pagebreak
+ 		
+ 		\begin{exmp}
+ 			\textbf{Newton's Laws of Motion}\\
+ 			According to Newton's laws of motion, any object that is not acted on by any external force will have constant velocity. Moreover, a particle in Special Relativity that does not interact with any external forces will also have constant velocity. We define an affine parameter $\lambda$ to denote a worldline $x^\mu (\lambda)$ for some particle with constant velocity in special relativity such that $\lambda$ is proportional to the proper time of the particle. Then, allowing differentiation with respect to $\lambda$, we have:
+ 			\begin{equation}
+ 				\label{eq:Newton1}
+ 				\frac{d^2}{d\lambda^2} x^\mu = \ddot{x}^\mu = 0
+ 			\end{equation}
+ 			This is not a tensorial equation. To see this, define $v^\nu \partial_\nu v^\mu = 0$ where $v^\mu = \dot{x}^\mu$. By the chain rule, the particle with constant velocity in Special Relativity will include a partial derivative and thus cannot be a tensorial equation. We need to covariantize via the Principle of Minimal Coupling to turn this into a tensorial equation, which becomes the \hyperref[eq:GeodesicEquation]{Geodesic Equation}
+ 			\begin{equation}
+ 				\label{eq:Newton2}
+ 				v^\nu \Del_\nu v^\mu = \ddot{x}^\mu + \Gamma_{\nu\rho}^\mu \,\dot{x}^\nu \dot{x}^\rho = 0
+ 			\end{equation}
+ 			Moreover, free-falling particles will follow geodesics over curved spacetime. This results in gravity not being a force, but rather a feature of the curvature of spacetime. Therefore, the geodesic equation will have to capture the effect of gravity on the motion of the particle. This constricts the notion of no external forces to exclude gravitation, as it is therefore not a force. So we can say that the effect of gravity on the motion of particles is that they should travel on geodesics, as long as they are not acted on by our other forces aside from gravity.
+ 		\end{exmp}
+ 		So how does geodesic motion through curved space reproduce properties of gravity that we already know, such as Kepler's laws and Newtonian gravitation? Let us consider a particle in some Cartesian coordinates $x^\mu$ over some Manifold $M$ that is locally flat. This implies that the gravitational field is weak. Second, we consider that the particle is moving relatively slowly, such that its speed at any point has the property $v \ll c$, thereby making relativistic effects negligible. In a more generalized sense:
+ 		$$ x^\mu = (x^0, x^1, x^2, x^3) = (x^0, x^i)$$
+ 		$$ \therefore \dot{x}^0 \approx 1 \quad\quad \text{AND} \quad\quad \dot{x}^i \ll c$$
+ 		Where we have that $\dot{x}^\mu = \frac{d}{d\lambda} x^\mu$ and $\lambda \approx t$. As in the case of the Newtonian example, $\lambda$ represents the proper time $t \approx \tau$ for the particle. Thus, we would get a geodesic equation for the particle as in equation (\ref{eq:Newton2}). From the geodesic equation, we would like to find the acceleration of the particle meaning we only work with the spatial coordinate indices $i$. This yields:
+ 		\begin{equation}
+ 			\label{eq:ParticleAcceleration}
+ 			\boxed{\ddot{x}^{i} = -\Gamma_{\nu\rho}^i \dot{x}^\nu \dot{x}^\rho \approx - \Gamma_{00}^i \left( \dot{x}^0 \right)^2 \approx - \Gamma_{00}^i}
+ 		\end{equation}
+ 		So the acceleration of a particle relates to the first derivatives of the metric through $-\Gamma_{00}^i$. We now wish to compare this result to Newton's gravitation law that describes the motion of a particle in a gravitational field. Recall that Newton's gravitation law implies that
+ 		\begin{equation}
+ 			\label{eq:NewtonGravitation}
+ 			\ddot{\vec{x}} = - \vec{\Del} \Phi
+ 		\end{equation}
+ 		Where we have that $\vec{\Del} \Phi$ represents the force of the gravitational potential function $\Phi$. We can thus make an analogy that $\Phi \approx g_{\mu\nu}$ and therefore $\vec{\Del}\Phi \approx \Gamma_{ij}^k$. Let us now imagine that $g_{\mu\nu} \approx \eta_{\nu\mu}$ such that there exists a Cartesian coordinate system where
+ 		\begin{equation}
+ 			\label{eq:Deviation}
+ 			g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu} = \eta_{\mu\nu} + \mathcal{O}\left(h\right)
+ 		\end{equation}
+ 		Where $h_{\mu\nu}$ represents the small deviation from being flat. This means that 
+ 		\begin{equation}
+ 			\label{eq:InverseDeviation}
+ 			g^{\mu\nu} = \eta^{\mu\nu} + h^{\mu\nu} = \eta^{\mu\nu} + \mathcal{O}\left(h\right)
+ 		\end{equation}
+ 		The Christoffel symbol of this nearly flat metric will hence be
+ 		\begin{equation}
+ 			\label{eq:FlatChristoffels}
+ 			\Gamma_{\nu\rho}^{\mu} = \frac12 \eta^{\mu\nu} \left( h_{\sigma\nu;\rho} + h_{\sigma\rho;\nu} - h_{\nu\rho;\sigma} \right) + \bigO \left( h^2 \right)
+ 		\end{equation}
+ 		Now let us imagine that the metric is static with respect to the Cartesian coordinates, and also consider that the metric is independent of time such that $h_{\mu\nu}$ is also independent of time. Thus, we can use equation (\ref{eq:ParticleAcceleration}) and compute $\Gamma_{00}^i$
+ 		\begin{equation}
+ 			\label{eq:ChristoffelAcceleration}
+ 			\Gamma_{00}^i = - \frac12 h_{00;i}
+ 		\end{equation}
+ 		So the geodesic equation for a particle moving relatively slowly through an approximately flat spacetime where we can consider time to be independent of space as:
+ 		$$ 
+ 			\ddot{x}^i = -\frac12 h_{00;i} \implies \ddot\vec{x} = -\vec\Del \left( \frac12 h_{00;i} \right) 
+ 		$$
+ 		Notice that because spacetime is flat, we are allowed to switch between upper and lower indices so the above equation still holds. This means that \textit{the geodesic equation is the force law of Newtonian gravity for metrics which are static and nearly flat, and for particles that are moving slowly}. For this to hold, we must set
+ 		\begin{equation}
+ 			\label{eq:GravityForce}
+ 			h_{00}^i = -2 \Phi
+ 		\end{equation}
+ 		In other words, Newtonian gravity might have been considered as the effects of gravitational fields on objects in spacetime. But more generally, it is the theory of particles moving in geodesics in a curved spacetime. Moreover, a geometry corresponding to some Newtonian potential in this nearly flat spacetime is therefore given by
+ 		\begin{equation}
+ 			\label{eq:NewtonianGeometry}
+ 			ds^2 = - \left( 1 + 2 \Phi \right) dt^2 + d\vec{x}^2
+ 		\end{equation}
+ 		However, this approximation breaks down if any of the conditions we imposed are not met:
+ 		\begin{itemize}
+ 			\item The particle is travelling relatively fast: $v \approx c$
+ 			\item The potential function $\Phi$ is time dependant: $\Phi(x^0,x^i)$
+ 			\item The potential function $\Phi$ is very large, such that the curvature on spacetime is significant
+ 			\item The first or higher order derivatives of the metric are non-zero.
+ 		\end{itemize}
+ 		Recall that a force law describes how the motion of objects is affected by the presence of a force field. Also recall that the equations of motion in Newtonian physics allows us to determine the gravitational field in the presence of sources such that:
+ 		\begin{equation}
+ 			\label{eq:NewtonGravityField}
+ 			\Del^2 \Phi = \Delta \Phi = 4 \phi G \rho
+ 		\end{equation}
+ 		Here, $\rho$ is the energy density of the object in question, and $G$ is the Newtonian constant. In our geometric interpretation of gravity, we should replace this by some equation for the second derivative of the metric which is also a tensor equation. We first begin with a simpler case where $\rho=0$. This merely means that we are studying Newton's laws in a vacuum. In this case, we have that $\Delta \Phi = 0$, which means there is a tensor which we can construct out of second derivatives of the metric: the \hyperref[eq:RiemannTensor]{Riemann tensor} $R^\rho_{\mu\nu\sigma}$. So the simplest possibility is that $R_{\mu\nu\sigma}^\rho$, but this would mean spacetime is flat as it has no curvature. The next simplest case would be something that yields a non-zero Riemann tensor but where the \hyperref[eq:RicciTensor]{Ricci tensor} $R_{\mu\nu}$, a symmetric (0,2)-tensor, which becomes zero. This implies we have $\frac{5\times4}{2} = 10$ equations, which fits perfectly with the 10 unknown parameters of the metric $g_{\mu\nu}$, which is also a symmetric $(0,2)$-tensor. This therefore reproduces the notion that $\Del^2 \Phi = \Delta \Phi = 0$.
+ 		\begin{defn}
+ 			\textbf{Einstein's Field Equations} relate the geometry of spacetime to the distribution of matter within it and are given by
+ 			\begin{equation}
+ 				\label{eq:EFE}
+ 				\boxed{G_{\mu\nu} + \Lambda g_{\mu\nu} = \kappa T_{\mu\nu}}
+ 			\end{equation}
+ 			Or more explicitly
+ 			\begin{equation}
+ 				\label{eq:EFE2}
+ 				\boxed{R_{\mu\nu} -\frac12 R g_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}}
+ 			\end{equation}
+ 			Where $T_{\mu\nu}$ is the stress-energy tensor, $\kappa$ is the Einstein gravitational constant, and $\Lambda$ is the cosmological constant. We will explain all of these parameters and their implications individually to better understand them.
+ 		\end{defn}
+ 		We usually work with equation (\ref{eq:EFE}) rather than (\ref{eq:EFE2}). With the equations defined, we go for the simplest solution by the discussion above:
+ 		\pagebreak
+ 		\begin{defn}
+ 			
+ 			The \textbf{Vacuum Solution to Einstein's Field Equations} for a curved spacetime metric $g_{\mu\nu}$ outside of the interior of sources, where the energy density is $\rho=0$, the Riemann tensor is $R^\rho_{\mu\nu\sigma}\neq 0$, and the Ricci tensor is $R_{\mu\nu} = 0$ is given by
+ 			\begin{equation}
+ 				\label{eq:EFE-vacuum}
+ 				\Lambda g_{\mu\nu} = \kappa T_{\mu\nu}
+ 			\end{equation}
+ 			Implying that the Einstein tensor $G_{\mu\nu}=0$.
+ 		\end{defn}
+ 	\subsection{The Stress-Energy Tensor}
+ 		Now, consider the case where the density of matter $\rho \neq 0$. We know that $\Del^2 \Phi = 4\pi G \rho$, so we need to see how to derive the value of $\kappa$ to understand its meaning. Moreover, we want the relativistic notion of energy that will define the RHS of the Einstein field equations. Recall from special relativity that energy is a component of a four vector, so the energy of an object depends of the reference frame in which it is measured. Thus, measuring the kinetic energy in different frames might yield different measurements. Energy is not a notion that makes sense in relativity. For instance, rest energy represents the energy in a rest frame, but we need to generalize what we understand as energy.
+ 		\begin{defn}
+ 			\textbf{Energy} is the conserved quantity associated with time translations according to Noether's theorem, which states that every differentiable symmetry of the action of a physical system has a corresponding conservation law.
+ 		\end{defn}
+ 		\begin{exmp}
+ 			\textbf{Symmetry of translations in time}\\
+ 			If we describe physical processes in terms of a time coordinate, we could change the initial value of time and the outcome in terms of physical laws would remain the same (at least, some time after the Big Bang, but more on that later). This means that \textbf{time is considered to be homogeneous}.
+ 		\end{exmp}
+ 		We therefore consider the \textbf{Poincar\'{e} Symmetries}, which are the symmetries of Special Relativity and they are given by 4 translations, 3 rotations, and 3 Lorentzian boosts, equating to 10 symmetries that represent 10 conserved quantities, which is also the number of degrees of freedom in a 4-dimensional metric.
+ 		\begin{defn}
+ 			The \textbf{Stress-Energy Tensor} or \textbf{Stress-Energy-Momentum tensor} $T_{\mu\nu}$ is a symmetric $(0,2)$-tensor that represents the flux of the four-momentum $p^\mu$ across a surface of $x^\nu$, and it results from the Poincar\'{e} Symmetries.
+ 		\end{defn}
+ 		This yields the following nomenclature for its components:
+ 		\begin{multicols}{2}
+ 			\begin{itemize}
+ 				\item $T_{00} \equiv $ Energy density
+ 				\item $T_{i0} \equiv $ Momentum density\\
+ 				\item $T_{0i} \equiv $ Energy flux across surface of fixed space
+ 				\item $T_{ij} \equiv $ Momentum flux across surface of fixed space
+ 			\end{itemize}
+ 		\end{multicols}
+ 		Now, the stress-energy tensor $T_{\mu\nu}$ obeys the following two rules
+ 		\begin{equation}
+ 			\label{eq:SET-1}
+ 			T_{\mu\nu} = T_{\nu\rho}
+ 		\end{equation}
+ 		\begin{equation}
+ 			\label{eq:SET-2}
+ 			\Del^\mu T_{\mu\nu} = 0
+ 		\end{equation}
+ 		Recall that the Einstein tensor was also conserved $\Delta^\mu G_{\mu\nu} = 0$, so the only possible equation of motion for General Relativity, if we do not consider the cosmological constant yet as Einstein first did, is
+ 		\begin{equation}
+ 			\label{eq:EFE-wrong}
+ 			\boxed{G_{\mu\nu} = \kappa T_{\mu\nu}}
+ 		\end{equation}
+ 		
+ 	\subsection{Lagrangians in General Relativity}
+ 	\subsection{Evidence of General Relativity}
+ 	\subsubsection{Orbital Precision}
+ 	\subsubsection{Gravitational Lensing}
+ 	\subsubsection{Redshift}
+ 	\section{Cosmology}
+ 	\subsection{The Schwarzschild Metric}
+ 	\subsection{Black Holes \& Singularities}
+ 	\subsection{Wormholes}
+ 	\subsection{Universal Expansion}
+ 	\subsection{Gravitational Waves}
+ 	
 \end{document}

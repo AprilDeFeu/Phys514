@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.20)  31 MAR 2021 00:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.20)  31 MAR 2021 05:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1270,35 +1270,39 @@ ureNotes.toc)
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.75  			\item
-               \textbf{Force law} [1]pdfTeX warning (ext4): destination with th
-e same identifier (name{page.2}) has been already used, duplicate ignored
+l.75 	 		\begin
+               {exmp} [1]pdfTeX warning (ext4): destination with the same ident
+ifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.96  		T
-         he force law is also replaced by the geodesic equation, which tells...
-[2] [3] [4] [5] [6] [7] [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 415--416
+l.98  		
+         [2] [3] [4] [5] [6] [7] [8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 417--418
 
  []
 
 [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21]
-Underfull \hbox (badness 1931) in paragraph at lines 787--788
+Underfull \hbox (badness 1931) in paragraph at lines 790--791
 []\OT1/cmr/m/n/10 Consider some curved man-i-fold $\OML/cmm/m/it/10 M$ \OT1/cmr
 /m/n/10 such that we can
  []
 
 [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36]
-[37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50]
-(./Phys514_LectureNotes.aux)
+[37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51]
+[52] [53] [54]
+Underfull \hbox (badness 10000) in paragraph at lines 2003--2004
+
+ []
+
+[55] [56] (./Phys514_LectureNotes.aux)
 Package rerunfilecheck Info: File `Phys514_LectureNotes.out' has not changed.
-(rerunfilecheck)             Checksum: 67832EF3C3B3FDBF808BCE2CEFC4A474;685.
+(rerunfilecheck)             Checksum: 51E015F35AE23E40DA66D7B115BD68A5;1638.
  ) 
 Here is how much of TeX's memory you used:
- 41338 strings out of 479304
- 932544 string characters out of 5871213
- 1484929 words of memory out of 5000000
- 57611 multiletter control sequences out of 15000+600000
+ 41419 strings out of 479304
+ 933655 string characters out of 5871213
+ 1483193 words of memory out of 5000000
+ 57646 multiletter control sequences out of 15000+600000
  424590 words of font info for 120 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  143i,16n,144p,1366b,1036s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1329,10 +1333,10 @@ live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2020
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-d
 ist/fonts/type1/public/rsfs/rsfs10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/
 public/cm-super/sfrm1000.pfb>
-Output written on Phys514_LectureNotes.pdf (52 pages, 496764 bytes).
+Output written on Phys514_LectureNotes.pdf (58 pages, 524894 bytes).
 PDF statistics:
- 705 PDF objects out of 1000 (max. 8388607)
- 615 compressed objects within 7 object streams
- 268 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 845 PDF objects out of 1000 (max. 8388607)
+ 748 compressed objects within 8 object streams
+ 314 named destinations out of 1000 (max. 500000)
+ 205 words of extra memory for PDF output out of 10000 (max. 10000000)
 
