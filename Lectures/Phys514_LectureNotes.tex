@@ -13,7 +13,6 @@
 \author{April Sada Solomon}
 \date{Winter 2021}
 
-
 % Document
 \begin{document}
 
@@ -1990,7 +1989,7 @@
  		\end{defn}
  		\begin{exmp}
  			\textbf{Symmetry of translations in time}\\
- 			If we describe physical processes in terms of a time coordinate, we could change the initial value of time and the outcome in terms of physical laws would remain the same (at least, some time after the Big Bang, but more on that later). This means that \textbf{time is considered to be homogeneous}.
+ 			If we describe physical processes in terms of a time coordinate, we could change the initial value of time and the outcome in terms of physical laws would remain the same (at least, some time after the Big Bang, but more on that later). This means that \textit{time is considered to be homogeneous}.
  		\end{exmp}
  		We therefore consider the \textbf{Poincar\'{e} Symmetries}, which are the symmetries of Special Relativity and they are given by 4 translations, 3 rotations, and 3 Lorentzian boosts, equating to 10 symmetries that represent 10 conserved quantities, which is also the number of degrees of freedom in a 4-dimensional metric.
  		\begin{defn}
@@ -2001,8 +2000,8 @@
  			\begin{itemize}
  				\item $T_{00} \equiv $ Energy density
  				\item $T_{i0} \equiv $ Momentum density\\
- 				\item $T_{0i} \equiv $ Energy flux across surface of fixed space
- 				\item $T_{ij} \equiv $ Momentum flux across surface of fixed space
+ 				\item $T_{0i} \equiv $ Energy flux across surface of fixed space or time
+ 				\item $T_{ij} \equiv $ Momentum flux across surface of fixed space or time
  			\end{itemize}
  		\end{multicols}
  		Now, the stress-energy tensor $T_{\mu\nu}$ obeys the following two rules
@@ -2019,8 +2018,117 @@
  			\label{eq:EFE-wrong}
  			\boxed{G_{\mu\nu} = \kappa T_{\mu\nu}}
  		\end{equation}
+ 		So the \hyperref[eq:NewtonGravitation]{Newtonian gravitational law} can be interpreted as the equation for geodesic motion in curved spacetime. Particularly, it considers a weakly curved spacetime that approximates to Minkowski spacetime. In other words, this leads to a \hyperref[eq:NewtonianGeometry]{Newtonian metric} where $\Phi \equiv \Phi \left( x \right)$ with Cartesian coordinates $x^\mu = \left(t, \vec{x}\right)$. So what had previously been considered a gravitational field is now a feature of  the curvature of spacetime. We have the redefined force law above and we also recall the \hyperref[eq:NewtonGravityField]{equations of motion for $\Phi$}, which should be replaced by a set of second order differential equations for the metric. Our educated guess would be a use of the \hyperref[eq:RiemannTensor]{Riemann Tensor} with components related to the mass-energy of the system. This implies that in the absence of mass, we approximate spacetime to Minkowski flat spacetime as the curvature vanishes. This vacuum solution is too strong because it essentially nullifies gravity, so the next educated guess would be the use of the \hyperref[eq:RicciTensor]{Ricci Tensor} again with mass-energy components, as seen previously. We recall that in equation (\ref{eq:NewtonGravityField}) $\rho$ is a measure of the energy density and not the mass-density, so it will depend on the frame of reference chosen, and from which we obtained the stress-energy tensor. It is important to understand all of this to push forward into the nature of General Relativity.
+ 		
+ 		The nature of the symmetric (0,2)-stress-energy tensor leads to a few symmetric properties:
+ 		\begin{equation}
+ 			\label{SET-prop1}
+ 			T_{\mu\nu} = T_{\nu\mu}
+ 		\end{equation} 
+ 		\begin{equation}
+ 			\label{SET-prop2}
+ 			\Del^\mu T_{\mu\nu} = 0 
+ 		\end{equation} 
+ 		Note that in the case of Minkowski space (Special Relativity) we have that equation (\ref{SET-prop2}) becomes 
+ 		$$ \partial^\mu T_{\mu\nu} = 0$$
+ 		
+ 		\begin{exmp}
+ 			\textbf{The perfect fluid} \\
+ 			Consider a perfect fluid at rest that is characterized by energy density $\rho$ and pressure density $P$. We neglect most of the complicated properties found in fluid dynamics and instead we consider the fluid to have no viscosity. So in Minkowski spacetime, we describe the stress-energy tensor for a perfect fluid with
+ 			\begin{equation}
+ 				\label{SET-PerfectFluid}
+ 				T_{\mu\nu} = \begin{pmatrix}
+ 					\rho & 0 & 0 & 0 \\
+ 					0 & P & 0 & 0 \\
+ 					0 & 0 & P & 0 \\
+ 					0 & 0 & 0 & P
+ 				\end{pmatrix}
+ 			\end{equation}
+ 			So comparing this to our definition to the stress-energy tensor, $T_00$ is the energy density, and $T_{ij}$ are the flux of momentum in space.
+ 			
+ 			\begin{defn}
+ 				The \textbf{4-velocity} of some body in spacetime is given by
+ 				\begin{equation}
+ 					\label{4velocity}
+ 					v^{\mu} = \left( \ell, \ell \cdot{\vec{v}} \right), \quad\quad\quad\quad \ell = \frac{1}{\sqrt{1-\frac{{v}^2}{c^2}}}
+ 				\end{equation}
+ 				Where $\ell$ is the Lorentz factor.
+ 			\end{defn}
+ 			Now, assume that the fluid has relative velocity $\vec{v}$ such we can define as a 4-velocity $b^\mu$. In Minkowski spacetime, it then follows that
+ 			\begin{equation}
+ 				\label{SET-InverseFlat}
+ 				T^{\mu\nu} = \left(\rho + P\right)v^\mu v^\nu + P \eta^{\mu\nu}
+ 			\end{equation}
+ 			However, for curved spacetimes we have
+ 			\begin{equation}
+ 				\label{SET-InverseCurved}
+ 				\boxed{T^{\mu\nu} = \left( \rho+P\right) v^\mu v^\nu + P g^{\mu\nu}}
+ 			\end{equation}
+ 			In thermodynamics we learned that most fluids have an equation of state that relates their energy density to pressure. The simplest example would be that of a linear equation of state where 
+ 			\begin{equation}
+ 				\label{eq:EquationOfState}
+ 				P \propto \rho \implies \boxed{P = w \rho}
+ 			\end{equation}
+ 			Where $w$ is a constant known as the \textit{equation of state parameter}. For instance, a perfect fluid with no pressure implies some matter distribution.
+ 			
+ 			\begin{defn}
+ 				In General Relativity we denote \textbf{dust} as any perfect fluid with no viscosity and no pressure that equates to some distribution of matter, considering energy density $\rho \neq 0$. Moreover, $w=0$ such that
+ 				\begin{equation}
+ 					\label{eq:Dust}
+ 					P = 0 \cdot \rho = 0
+ 				\end{equation}
+ 				
+ 			\end{defn}
+ 			A gas of photons could also be considered as having a linear equation of state.
+ 			\begin{defn}
+ 				In General Relativity we denote \textbf{radiation} as any matter distribution that is entirely composed of massless particles, usually electrons. Moreover, $w=\frac13$ such that
+ 				\begin{equation}
+ 					\label{eq:Radiation}
+ 					P = \frac13 \rho
+ 				\end{equation}
+ 			\end{defn}
+ 			An interesting feature of the stress-energy tensor for radiation is traceless. This means that $\eta^{\nu\mu}T_{\mu\nu} = 0$, which is the signature feature of electromagnetism. Particularly it is the definite feature of clouds of particles that have no mass. 
+ 			
+ 			Next, we consider the case of a perfect gas, which includes all ideal gases.
+ 			\begin{defn}
+ 				A \textbf{perfect gas} is defined by the Boltzmann constant $k_b$, Avogadro's number $N_a$, and its effective temperature $T$ such that the intermolecular forces are neglected. Hence, $w = N_a k_b T$ such that
+ 				\begin{equation}
+ 					\label{eq:PerfectGas}
+ 					P = \left(N_a k_b T\right) \rho
+ 				\end{equation}
+ 			\end{defn}
+ 			Finally, we can consider the absence of any matter in the fluid
+ 			\begin{defn}
+ 				The \textbf{vacuum energy} represents the proportionality of the energy density to pressure in the absence of matter. Hence, we define the \textbf{cosomological constant} $\Lambda$ such that $w = \frac{\Lambda}{\rho} = -1$, thus
+ 				\begin{equation}
+ 					\label{VacuumEnergy}
+ 					P = \Lambda = -\rho
+ 				\end{equation}
+ 			\end{defn}
+ 		\end{exmp}
+ 		We now have several examples of perfect fluids under General Relativity. Take note of the case of vacuum energy as the stress-energy tensor become of particular interest once we plug equation (\ref{VacuumEnergy}) into equation (\ref{SET-InverseCurved}) to get
+ 		\begin{equation}
+ 			\label{eq:VacuumSET}
+ 			T_{\mu\nu} = \Lambda g_{\mu\nu} = -\rho g_{\mu\nu}
+ 		\end{equation}
+ 		So in the vacuum the 4-velocity vanishes. In the context of present day cosmology, the simplest model for \textbf{dark energy} is represented by equation (\ref{eq:VacuumSET}). The \textbf{theory of inflation} purposes that the Universe at its early age was dominated by some kind of matter that had vacuum energy. One can verify that for some perfect fluid the stress-energy tensor is conserved by equation (\ref{SET-prop2}), which confirms that the cosmological constant $\Lambda$ indeed is a constant.
+ 		
+ 		\begin{exmp}
+ 			\textbf{Non-Relativistic limits of pressureless dust}\\
+ 			We consider a pressureless dust with some 4-velocity $v^\mu = (1, \vec{v})$ (so the Lorentz factor is $\ell=1$) which implies a stress-energy tensor
+ 			$$ T_{\mu\nu} = \rho v_\mu v_\nu$$
+ 			With conservation
+ 			$$ \partial^\mu T_{\mu\nu} = 0 \implies \partial_t \rho + \partial_i \left( \rho v^i \right) = 0  $$
+ 			Therefore, we have the \textbf{continuity equation} given as:
+ 			\begin{equation}
+ 				\label{eq:Continuity}
+ 				\boxed{\dot{\rho} + \vec{\Del} \left(\rho \vec{v}\right) = 0 }
+ 			\end{equation}
+ 			Where $\dot\rho$ is the rate of change in the density of matter with respect to time, which is equal to the flux of matter leaving said point $-\vec{\Del}\left(\rho \vec{v}\right)$. This is known as \textbf{mass conservation}.
+ 		\end{exmp}
  		
  	\subsection{Lagrangians in General Relativity}
+ 		
  	\subsection{Evidence of General Relativity}
  	\subsubsection{Orbital Precision}
  	\subsubsection{Gravitational Lensing}
