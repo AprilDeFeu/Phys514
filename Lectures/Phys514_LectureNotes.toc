@@ -12,14 +12,14 @@
 \contentsline {section}{\numberline {3}General Theory of Relativity}{51}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Gravitation}{51}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}The Stress-Energy Tensor}{55}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Lagrangians in General Relativity}{59}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Evidence of General Relativity}{59}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Orbital Precision}{59}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Gravitational Lensing}{59}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Redshift}{59}{subsubsection.3.4.3}%
-\contentsline {section}{\numberline {4}Cosmology}{59}{section.4}%
-\contentsline {subsection}{\numberline {4.1}The Schwarzschild Metric}{59}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Black Holes \& Singularities}{59}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Wormholes}{59}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Universal Expansion}{59}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Gravitational Waves}{59}{subsection.4.5}%
+\contentsline {subsection}{\numberline {3.3}Lagrangians in General Relativity}{61}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Evidence of General Relativity}{61}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Orbital Precision}{61}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Gravitational Lensing}{61}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Redshift}{61}{subsubsection.3.4.3}%
+\contentsline {section}{\numberline {4}Cosmology}{61}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The Schwarzschild Metric}{61}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Black Holes \& Singularities}{61}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Wormholes}{61}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Universal Expansion}{61}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Gravitational Waves}{61}{subsection.4.5}%

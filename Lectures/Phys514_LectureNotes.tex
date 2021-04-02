@@ -1955,7 +1955,7 @@
  		Recall that a force law describes how the motion of objects is affected by the presence of a force field. Also recall that the equations of motion in Newtonian physics allows us to determine the gravitational field in the presence of sources such that:
  		\begin{equation}
  			\label{eq:NewtonGravityField}
- 			\Del^2 \Phi = \Delta \Phi = 4 \phi G \rho
+ 			\Del^2 \Phi = \Delta \Phi = 4 \pi G \rho
  		\end{equation}
  		Here, $\rho$ is the energy density of the object in question, and $G$ is the Newtonian constant. In our geometric interpretation of gravity, we should replace this by some equation for the second derivative of the metric which is also a tensor equation. We first begin with a simpler case where $\rho=0$. This merely means that we are studying Newton's laws in a vacuum. In this case, we have that $\Delta \Phi = 0$, which means there is a tensor which we can construct out of second derivatives of the metric: the \hyperref[eq:RiemannTensor]{Riemann tensor} $R^\rho_{\mu\nu\sigma}$. So the simplest possibility is that $R_{\mu\nu\sigma}^\rho$, but this would mean spacetime is flat as it has no curvature. The next simplest case would be something that yields a non-zero Riemann tensor but where the \hyperref[eq:RicciTensor]{Ricci tensor} $R_{\mu\nu}$, a symmetric (0,2)-tensor, which becomes zero. This implies we have $\frac{5\times4}{2} = 10$ equations, which fits perfectly with the 10 unknown parameters of the metric $g_{\mu\nu}$, which is also a symmetric $(0,2)$-tensor. This therefore reproduces the notion that $\Del^2 \Phi = \Delta \Phi = 0$.
  		\begin{defn}
@@ -2119,14 +2119,58 @@
  			$$ T_{\mu\nu} = \rho v_\mu v_\nu$$
  			With conservation
  			$$ \partial^\mu T_{\mu\nu} = 0 \implies \partial_t \rho + \partial_i \left( \rho v^i \right) = 0  $$
- 			Therefore, we have the \textbf{continuity equation} given as:
+ 			Therefore, we have the \textbf{continuity equation} is given as:
  			\begin{equation}
  				\label{eq:Continuity}
  				\boxed{\dot{\rho} + \vec{\Del} \left(\rho \vec{v}\right) = 0 }
  			\end{equation}
  			Where $\dot\rho$ is the rate of change in the density of matter with respect to time, which is equal to the flux of matter leaving said point $-\vec{\Del}\left(\rho \vec{v}\right)$. This is known as \textbf{mass conservation}.
  		\end{exmp}
+ 		We can therefore state from the \hyperref[eq:SET-prop2]{second property} of the stress-energy tensor that 
+ 		$$ R_{\mu\nu} \neq \kappa T_{\mu\nu} $$
+ 		However, the Einstein tensor $G_{\mu\nu}$ by equation (\ref{eq:EinsteinTensorBinachi}) is conserved. This means that the correct equation of motion for General Relativity must resemble equation (\ref{eq:EFE-wrong}) such that the RHS of the equation relates to the matter-energy density and the LHS relates to the second-derivatives of the metric. So now, we would like to see if this reproduce Newtonian gravity, particularly equation (\ref{eq:NewtonGravityField}) where we have the interval given by equation (\ref{eq:NewtonianGeometry}) with a stress-energy tensor $T^{\mu\nu} = $ diag$(\rho,0,0,0)$. We wish to reproduce this Newtonian theory of gravity for dust in its rest frame. Let us consider some matter distribution and see if this validates our assumptions.
  		
+ 		We begin by expanding $G_{\mu\nu}$ to first order in the gravitational potential $\Phi$ and compare it to the stress-energy tensor. We simplify by taking the trace of $G_{\mu\nu}$ such that we contract both sides with $\mu\nu$ and get
+ 		$$ \text{tr} \left( G_{\mu\nu} \right) = R - \frac12 \cdot 4 R = \kappa \text{ tr}\left( T_{\mu\nu} \right)$$
+ 		Which simplifies to
+ 		\begin{equation}
+ 			\label{eq:TraceEinstein}
+ 			T = g^{\mu\nu} T_{\mu\nu} = -\rho \bigO \left(\Phi \right)
+ 		\end{equation}
+ 		Which implies that $-R = \kappa T$ and $R = k\rho + \dots$, so we start we see which components don't vanish.
+ 		
+ 		If we let $\mu=\nu=0$, we have
+ 		\begin{align*}
+ 			T_00 &= \rho \\
+ 			\kappa T_{00} &= R_{00} - \frac12 g_{00} R
+ 		\end{align*}
+ 		So $R_{00} = -\frac12 \left(\kappa \rho\right) + \kappa \rho = \frac12 \kappa \rho + \dots$, which means we only need to compute
+ 		$$ R_{00} = R^{\lambda}_{0\lambda0}$$
+ 		For which we need the Christoffel symbols. Recalling our \hyperref[eq:NewtonianGeometry]{Newtonian geometry} where $\Phi=\Phi (\vec{x})$ is evidently independent of time, the only Christoffel symbols we need to compute are
+ 		\begin{align*}
+ 			\Gamma_{00}^i &= \delta^{ij} \Phi_{00,j}\\
+ 			\Gamma_{0i}^0 &= \Phi_{00,j}
+ 		\end{align*}
+ 		So then we can write the following terms for the Riemann tensor:
+ 		\begin{align*}
+ 			R_{000}^0 &= 0 \quad\quad\quad\quad\quad\quad\quad \text{at }\bigO \left( \Phi \right) \\
+ 			R_{0i0}^i &= \partial_i \Gamma_{00}^i = \delta^{ij} \partial_i \partial_j \Phi = \Del^2 \Phi \\
+  		\end{align*}
+  		And finally the Ricci tensor we get is
+  		$$ R_{00} = \Del^2 \Phi + \dots = \frac12 \kappa \rho$$
+  		Letting $\kappa = 8\pi G$ we get that equation (\ref{eq:EFE-wrong}) becomes
+  		\begin{equation}
+  			\label{eq:EFE-wrong2}
+  			\boxed{G_{\mu\nu} = 8\pi G T_{\mu\nu}}
+  		\end{equation}
+  		This yield 10 EOM for 10 degrees of freedom, as the metric $g_{\mu\nu}$. Unlike in electromagnetism, Newtonian gravity has non-linear equations of motion. This implies that the Riemann tensor approximates
+  		$$ R^{\rho}_{\sigma\mu\nu}=\partial^2 g_{\mu\nu} + \left( \partial g_{\mu\nu} \right)^2 $$
+  		
+  		As a consequence of the non-linearity of Newtonian gravity it follows that given two metrics $f$ and $h$ which are both solutions to this equations of motion, we cannot assume that $f+h$ is also a solution.  So this is saying that we can use Newtonian gravity to gravity with a point source just like we may approximate electromagnetism to a charged point source. Therefore, we can say that the source for curvature is energy, and everything in the universe (including gravity) has energy. 
+  		
+  		We now have to ask ourselves what solutions we may have for the \hyperref[eq:EFE2]{Einstein Field Equations}. We may only get \textbf{exact solutions} if there is symmetry in the metric. Otherwise, we may only get \textbf{approximate solutions} or \textbf{numerical solutions}.
+  		
+  	\pagebreak
  	\subsection{Lagrangians in General Relativity}
  		
  	\subsection{Evidence of General Relativity}
